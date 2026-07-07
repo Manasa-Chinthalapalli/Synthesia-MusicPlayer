@@ -16,11 +16,11 @@ app.use(express.json());
 connectDB();
 
 app.use(
-    cors({
-        origin: "http://localhost:5173", //react for frontend(5173)
-        credentials: true,
-    })
-);
+       cors({
+           origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
+           credentials: true,
+       })
+   );
 
 
 //logics are written here
